@@ -1,0 +1,60 @@
+
+This project is done by  Pragathi Reddy Mallu(109748757) and Pragathi Reddy Mallu(109748757).We implemented 70 points project "Preemptive OS ".
+
+1.A idle user level process should always run if no other process is runnable.For this We are maintaining a user process called "pragathi",So os doesn't support to kill that process.
+
+2.Sbush is the name of the shell,which is loaded as soon as system is started.
+
+3.The maximum number of processses supported are 3000.
+
+4.Maximum number of pipes supported are 100.
+
+5.In shell
+	to run our shell from within the shell,please enter  ./sbush
+
+	to run a script from shell "sbush scriptname" or give the script name if script is in current working directory or give relative path from current working directory.
+	
+	The root of our filesystem is ""(there is no slash)	
+
+	if a binary is in current working directory or the path to binary is set in PATH variable or by giving a relative path from current work	ing directory,it can be loaded.
+	
+	setpath is command to set the path variable
+	ex: setpath bin/first(it shouldn't begin or end with slash)
+
+	setps is command to set ps variable
+
+	cd ~,.,..,name is supported
+
+6.ls binary is supported (with no arguments)
+
+7.ps displays the process id and name
+
+8. "kill -9 processid" kills the process
+
+9.Printf
+Printf function can handle the following
+%x,%d,%p,%c,%s and \n,\t,\r,\b
+
+10.Timer Interrupt.
+No of seconds since the boot is displayed on the right corner of the console.
+
+
+References:
+http://wiki.osdev.org/PS/2_Keyboard
+http://wiki.osdev.org/Programmable_Interval_Timer
+http://man7.org/index.html
+Intel: Intel 64 and IA-32 Architectures Developer’s Manual: Vol. 3A
+http://wiki.osdev.org/Expanded_Main_Page
+http://www.osdever.net/bkerndev/Docs/isrs.htm
+http://man7.org/linux/man-pages/
+
+To boot the system in QEMU, run:
+  qemu-system-x86_64 -curses -cdrom $USER.iso -drive id=disk,file=$USER.img,if=none -device ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0 -net nic -net user,hostfwd=tcp::10080-:80 -net user,hostfwd=tcp::10023-:23 --no-reboot -gdb tcp::9998
+
+
+When using the -curses mode, switch to the qemu> console with ESC-2.
+
+To connect a remote debugger to the running qemu VM:
+  gdb ./kernel
+  target remote localhost:9998
+
