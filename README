@@ -1,5 +1,5 @@
 
-This project is done by  Pragathi Reddy Mallu(109748757) and Pragathi Reddy Mallu(109748757).We implemented 70 points project "Preemptive OS ".
+This project is done by Vivek Nuthalapati(109747457) and Pragathi Reddy Mallu(109748757).We implemented 70 points project "Preemptive OS ".
 
 1.A idle user level process should always run if no other process is runnable.For this We are maintaining a user process called "pragathi",So os doesn't support to kill that process.
 
